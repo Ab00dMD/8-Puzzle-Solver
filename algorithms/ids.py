@@ -16,8 +16,10 @@ class IDS:
             root = Node((state,"none"), -1, get_children(state), "none", 0)
             frontier = Frontier()
             visited = set()
+            mp = dict()
             frontier.push_back(root)
             visited.add(root.state[0])
+            mp[root.state[0]] = 0
             while not frontier.is_empty(): 
                 #print("DO NOT WORRY I'M WORKING :), GIMME SOME TIME!!")
                 cur_node = frontier.pop_back()
@@ -30,8 +32,14 @@ class IDS:
                 for child_state in cur_node.children:
                     child_node = Node(child_state, cur_node, get_children(child_state[0]), child_state[1], cur_node.depth + 1)
                     if(child_node.depth <= limit):
-                        visited.add(child_state[0])
-                        frontier.push_back(child_node)
+                        if(child_node.state[0] not in visited):
+                            visited.add(child_state[0])
+                            frontier.push_back(child_node)
+                            mp[child_node.state[0]] = child_node.depth
+                        else:
+                            if(mp[child_node.state[0]] > child_node.depth):
+                                frontier.push_back(child_node)
+                                mp[child_node.state[0]] = child_node.depth
 
             limit += 1
         
