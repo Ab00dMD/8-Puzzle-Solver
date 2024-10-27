@@ -1,4 +1,4 @@
-import Node as Node
+import node as Node
 
 class Utils:
     @staticmethod

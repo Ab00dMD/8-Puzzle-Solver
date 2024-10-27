@@ -1,16 +1,11 @@
-from Node import Node
-from Frontier import Frontier
-from Utils import Utils
+from node import Node
+from frontier import Frontier
+from utils import Utils
 
 class DFS:
 
-    def __init__(self):
-        pass
-
-
     def start_dfs(state):
         node_expanded = 0
-        search_depth = 0
         path = []
         visited = set()
 

@@ -1,8 +1,8 @@
-from Node import Node
-
+from node import Node
+import collections 
 class Frontier:
     def __init__(self):
-        self.frontier = []
+        self.frontier = collections.deque()
 
 
     def push_back(self,item):
@@ -10,7 +10,7 @@ class Frontier:
 
 
     def push_front(self,item):
-        self.frontier.insert(0,item)
+        self.frontier.appendleft(item)
 
 
     def pop_back(self):
@@ -22,17 +22,11 @@ class Frontier:
 
     def pop_front(self):
         if not self.is_empty():
-            return self.frontier.pop(0)
+            return self.frontier.popleft()
         else:
             raise RuntimeError("frontier is empty")
 
 
-    def pop(self):
-        if not self.is_empty():
-            return self.frontier.pop()
-        else:
-            raise RuntimeError("frontier is empty")
-        
 
     def is_empty(self):
         return len(self.frontier) == 0
