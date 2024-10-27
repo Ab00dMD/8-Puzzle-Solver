@@ -21,11 +21,12 @@ def main():
         print(child)
 
 if __name__ == "__main__":
-    # # For DFS
-    # path, node_expanded, search_depth = DFS.start_dfs("123456078")
-    # print("DFS Path:", path)
-    # print("DFS Nodes Expanded:", node_expanded)
-    # print("DFS Search Depth:", search_depth)
+    # For DFS
+    DFS = DFS("123456078")
+    path, node_expanded, search_depth = DFS.search()
+    print("DFS Path:", path)
+    print("DFS Nodes Expanded:", node_expanded)
+    print("DFS Search Depth:", search_depth)
 
     # For BFS
     BFS = BFS("806547231")

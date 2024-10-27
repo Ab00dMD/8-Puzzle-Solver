@@ -1,15 +1,17 @@
 from node import Node
 from frontier import Frontier
 from utils import get_children, get_path, is_goal
+from algorithms.base import Algorithm
 
-class DFS:
+class DFS (Algorithm):
 
-    def start_dfs(state):
+    def search(self):
+        state = self.state
         node_expanded = 0
         path = []
         visited = set()
 
-        root = Node((state,"none"),-1,get_children(state),"none")
+        root = Node((state, "none"),-1,get_children(state),"none")
         frontier = Frontier()
 
         frontier.push_back(root)

@@ -1,12 +1,12 @@
 from node import Node
 from frontier import Frontier
 from utils import get_children, get_path, is_goal
-from algorithms.base import algorithm
+from algorithms.base import Algorithm
 
-class BFS (algorithm):
+class BFS (Algorithm):
                          
     def search(self):
-        state=self.state
+        state = self.state
         node_expanded = 0
         path = []
         visited = set()
