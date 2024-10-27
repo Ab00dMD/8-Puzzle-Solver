@@ -30,7 +30,7 @@ class IDS:
                     return path, node_expanded, len(path)
                 
                 for child_state in cur_node.children:
-                    child_node = Node(child_state, cur_node, get_children(child_state[0]), child_state[1], cur_node.depth + 1)
+                    child_node = Node(child_state, cur_node, get_children(child_state[0]), child_state[1], 0, cur_node.depth + 1)
                     if(child_node.depth <= limit):
                         if(child_node.state[0] not in visited):
                             visited.add(child_state[0])
