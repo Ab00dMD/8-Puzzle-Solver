@@ -7,7 +7,7 @@ DIRECTIONS = {
     "down": 3
 }
 
-def is_goal(state,goal="012345678"):
+def is_goal(state, goal="012345678"):
     return state == goal
 
 def move_tile(state, direction):
