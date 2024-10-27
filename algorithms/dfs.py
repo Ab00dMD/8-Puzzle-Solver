@@ -24,7 +24,7 @@ class DFS (Algorithm):
 
             if(is_goal(cur_node.state[0])):
                 path = get_path(cur_node)
-                return path, node_expanded, len(path)
+                return path, node_expanded, len(path[-1])
             
             for child_state in cur_node.children:
                 child_node = Node(child_state,cur_node,get_children(child_state[0]),child_state[1])
