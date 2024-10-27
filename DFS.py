@@ -17,12 +17,12 @@ class DFS:
         root = Node((state,"none"),-1,Utils.get_children(state),"none")
         frontier = Frontier()
 
-        frontier.add(root)
+        frontier.push_back(root)
         visited.add(root.state[0])
         print("let him cook")
         while not frontier.is_empty():
             print("DO NOT WORRY I'M WORKING :), GIMME SOME TIME!!")
-            cur_node = frontier.pop()
+            cur_node = frontier.pop_back()
             node_expanded += 1
 
             if(Utils.is_goal(cur_node.state[0])):
@@ -33,7 +33,7 @@ class DFS:
                 child_node = Node(child_state,cur_node,Utils.get_children(child_state[0]),child_state[1])
                 if(child_state[0] not in visited):
                     visited.add(child_state[0])
-                    frontier.add(child_node)
+                    frontier.push_back(child_node)
         
         return [],-1,-1
 
