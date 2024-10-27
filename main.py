@@ -7,6 +7,7 @@
 
 from utils import print_board, get_children
 from algorithms.dfs import DFS
+from algorithms.ids import IDS
 
 def main():
     print("Welcome to the 8-Puzzle Solver! please input the initial state of the board:")
@@ -23,7 +24,7 @@ def main():
         # print("\n")
 
 if __name__ == "__main__":
-    path,node_expanded,search_depth = DFS.start_dfs("123456078")
+    path,node_expanded,search_depth = IDS.start_ids("806547231")
     print(path)
     print(node_expanded)
     print(search_depth)

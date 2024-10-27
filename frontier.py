@@ -27,6 +27,9 @@ class Frontier:
             raise RuntimeError("frontier is empty")
 
 
+    def find(self,item):
+        return self.frontier.index(item)
+
 
     def is_empty(self):
         return len(self.frontier) == 0
