@@ -1,23 +1,24 @@
 from node import Node
+from algorithms.base import Algorithm
 from queue import PriorityQueue
-from utils import get_children, is_goal
+from utils import get_children, is_goal, get_path
 
-class AStar:
+class AStar(Algorithm):
   def __init__(self, state, heuristic):
-    self.node = Node(state, None, [], None)
+    self.node = Node(state, -1, [], None)
     self.heuristic = heuristic
     self.pq = PriorityQueue()
 
-  def solve(self):
+  def search(self):
     self.pq.put((self.__evaluation(self.node), self.node))
     visited = set()
     visited.add(self.node.state)
     while not self.pq.empty():
       cur_node = self.pq.get()[1]
       if is_goal(cur_node.state):
-        return cur_node
-      for child_state in get_children(cur_node.state):
-        child_node = Node(child_state, cur_node, [], None, cur_node.cost + 1)
+        return get_path(cur_node)
+      for child_state, direction in get_children(cur_node.state):
+        child_node = Node(child_state, cur_node, [], direction, cur_node.cost + 1)
         if child_state not in visited:
           visited.add(child_state)
           self.pq.put((self.__evaluation(child_node), child_node))

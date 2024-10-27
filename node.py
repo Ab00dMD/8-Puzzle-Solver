@@ -5,3 +5,6 @@ class Node:
         self.children = children
         self.direction = direction
         self.cost = cost
+
+    def __lt__(self, other):
+        return self.cost < other.cost
