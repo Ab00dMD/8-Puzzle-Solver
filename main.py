@@ -5,12 +5,12 @@
 # empty tile is 0
 
 
-
+from utils import print_board, get_children
 
 
 def main():
     print("Welcome to the 8-Puzzle Solver! please input the initial state of the board:")
-    number = int(input())
+    number = input()
     
     print_board(number)
     
