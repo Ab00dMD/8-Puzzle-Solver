@@ -1,6 +1,6 @@
 from node import Node
 from frontier import Frontier
-from utils import get_children,get_path,is_goal
+from utils import get_children, get_path, is_goal
 
 class DFS:
 
