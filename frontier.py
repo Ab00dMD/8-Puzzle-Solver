@@ -1,4 +1,3 @@
-from Node import Node
 
 class Frontier:
     def __init__(self):

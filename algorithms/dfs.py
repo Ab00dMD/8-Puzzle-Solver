@@ -1,6 +1,6 @@
-from Node import Node
-from Frontier import Frontier
-from Utils import Utils
+from node import Node
+from frontier import Frontier
+from utils import Utils
 
 class DFS:
 
