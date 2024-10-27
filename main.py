@@ -25,12 +25,10 @@ if __name__ == "__main__":
 
     # For BFS
     bfs = BFS("123456078")
-    path, node_expanded, search_depth = bfs.search()
-    print("BFS Path:", path)
-    print("BFS Nodes Expanded:", node_expanded)
-    print("BFS Search Depth:", search_depth)
+    solution= bfs.search()
+    print("BFS Path:", solution)
 
     # For AStar
     AStar = AStar("123456078", "manhattan")
-    path = AStar.search()
-    print("AStar Path:", path)
+    solution = AStar.search()
+    print("AStar Path:", solution)

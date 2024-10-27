@@ -1,4 +1,4 @@
-import node as node
+from node import Node
 
 DIRECTIONS = {
     "right": 1,
@@ -53,10 +53,12 @@ def print_board(state):
     print(state[6:])
 
 
-def get_path(node):
-    path = []
+def get_path(node: Node):
+    path_states = []
+    path_directions = []
     while node.parent != -1:
-        path.append(node.direction)
+        path_states.append(node.state)
+        path_directions.append(node.direction)
         node = node.parent
 
-    return path[::-1]
+    return path_states[::-1], path_directions[::-1]
