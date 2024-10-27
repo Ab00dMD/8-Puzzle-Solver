@@ -4,9 +4,9 @@
 #       678
 # empty tile is 0
 
-
 from utils import print_board, get_children
 from algorithms.dfs import DFS
+from algorithms.bfs import BFS
 
 def main():
     print("Welcome to the 8-Puzzle Solver! please input the initial state of the board:")
@@ -19,12 +19,16 @@ def main():
     print("Children of the current state:")
     for child in children:
         print(child)
-        # print_board(child)
-        # print("\n")
 
 if __name__ == "__main__":
-    path,node_expanded,search_depth = DFS.start_dfs("123456078")
-    print(path)
-    print(node_expanded)
-    print(search_depth)
-        
+    # For DFS
+    path, node_expanded, search_depth = DFS.start_dfs("123456078")
+    print("DFS Path:", path)
+    print("DFS Nodes Expanded:", node_expanded)
+    print("DFS Search Depth:", search_depth)
+
+    # For BFS
+    path, node_expanded, search_depth = BFS.start_bfs("806547231")
+    print("BFS Path:", path)
+    print("BFS Nodes Expanded:", node_expanded)
+    print("BFS Search Depth:", search_depth)
