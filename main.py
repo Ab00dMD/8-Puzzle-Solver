@@ -1,5 +1,6 @@
 from utils import print_board, get_children
 from algorithms.dfs import DFS
+from algorithms.ids import IDS
 from algorithms.bfs import BFS
 from algorithms.a_star import AStar
 
@@ -16,19 +17,11 @@ def main():
         print(child)
 
 if __name__ == "__main__":
-    # # For DFS
-    # DFS = DFS("123456078")
-    # path, node_expanded, search_depth = DFS.search()
-    # print("DFS Path:", path)
-    # print("DFS Nodes Expanded:", node_expanded)
-    # print("DFS Search Depth:", search_depth)
+    #ids = IDS("806547231")
+    #print(ids.search())
 
-    # For BFS
-    bfs = BFS("123456078")
-    solution= bfs.search()
-    print("BFS Path:", solution)
-
-    # For AStar
-    AStar = AStar("123456078", "manhattan")
-    solution = AStar.search()
-    print("AStar Path:", solution)
+    #dfs = DFS("806547231")
+    #print(dfs.search())
+    pass
+    
+        
