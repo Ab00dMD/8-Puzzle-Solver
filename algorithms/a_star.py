@@ -23,6 +23,7 @@ class AStar(Algorithm):
 
       if is_goal(cur_node.state):
         running_time = time.time() - start_node
+        print("I'm done")
         return {
           "path": get_path(cur_node),
           "nodes_expanded": self.nodes_expanded,

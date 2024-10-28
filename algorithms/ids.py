@@ -30,8 +30,7 @@ class IDS(Algorithm):
                     "nodes_expanded": node_expanded,
                     "max_search_depth": depth,
                     "running_time": running_time
-                }
-                
+                }                
             limit += 1
         
         return [],-1,-1
