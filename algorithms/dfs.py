@@ -29,11 +29,11 @@ class DFS (Algorithm):
                 path = get_path(cur_node)
                 running_time = time.time() - start_time
                 return {
-                  "path": path,
-                  "cost": cur_node.cost,
-                  "nodes_expanded": node_expanded,
-                  "max_search_depth": cur_node.depth,
-                  "running_time": running_time
+                    "path": path,
+                    "cost": cur_node.cost,
+                    "nodes_expanded": node_expanded,
+                    "max_search_depth": cur_node.depth,
+                    "running_time": running_time
                 }
             
             for child_state in cur_node.children:

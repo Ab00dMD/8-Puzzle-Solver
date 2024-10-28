@@ -20,7 +20,8 @@ if __name__ == "__main__":
     #ids = IDS("806547231")
     #print(ids.search())
 
-    dfs = DFS("806547231")
-    print(dfs.search())
+    #dfs = DFS("806547231")
+    #print(dfs.search())
+    pass
     
         
