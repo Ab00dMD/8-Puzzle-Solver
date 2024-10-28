@@ -28,6 +28,7 @@ class DFS (Algorithm):
             if(is_goal(cur_node.state[0])):
                 path = get_path(cur_node)
                 running_time = time.time() - start_time
+                print("I'm done")
                 return {
                     "path": path,
                     "cost": cur_node.cost,
