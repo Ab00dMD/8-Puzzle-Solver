@@ -1,4 +1,4 @@
-from utils import print_board, get_children
+from utils import print_board, get_children,is_solvable
 from algorithms.dfs import DFS
 from algorithms.ids import IDS
 from algorithms.bfs import BFS
@@ -82,6 +82,13 @@ def render_state(state: str):
     """
 
 def solve_board(board_state, algorithm):
+    ##check if the state is valid
+    if is_solvable(board_state):
+      st.success("The board state is solvable!")
+    else:
+      st.error("The board state is not solvable.")
+      return {}
+    
     if algorithm == "DFS":
         answer = DFS(board_state).search()
     elif algorithm == "IDS":
@@ -110,7 +117,7 @@ def display_answer(answer):
     if not answer:
         st.write("No solution found")
         return
-    print(answer)
+    # print(answer)
     paths = answer["path"][0]
     directions = answer["path"][1]
     st.write(f"Cost: {answer['cost']}")

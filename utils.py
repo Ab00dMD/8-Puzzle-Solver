@@ -62,3 +62,19 @@ def get_path(node: Node):
         node = node.parent
 
     return path_states[::-1], path_directions[::-1]
+
+
+def get_inv_count(state):
+    inv_count = 0
+    empty_value = "0"
+    
+    for i in range(len(state)):
+        for j in range(i + 1, len(state)):
+            if state[i] != empty_value and state[j] != empty_value and state[i] > state[j]:
+                inv_count += 1
+
+    return inv_count
+
+def is_solvable(state):
+    inv_count = get_inv_count(state)
+    return inv_count % 2 == 0
