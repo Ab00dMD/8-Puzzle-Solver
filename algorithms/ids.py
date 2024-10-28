@@ -39,15 +39,15 @@ class IDS(Algorithm):
 
     def dsl(self,cur_node,limit,nodes_expanded):
         if(is_goal(cur_node.state[0])):
-            return True, [], cur_node.cost, cur_node.depth, nodes_expanded
+            return True, get_path(cur_node), cur_node.cost, cur_node.depth, nodes_expanded
         
         for child_state in cur_node.children:
             child_node = Node(child_state, cur_node, get_children(child_state[0]), child_state[1], cur_node.cost + 1, cur_node.depth + 1)
             if(child_node.depth <= limit):
-               result = self.dsl(child_node,limit,nodes_expanded + 1)
+               result, path, cost, depth, nodes_expanded = self.dsl(child_node,limit,nodes_expanded + 1)
 
-               if(result and result[0]):
-                   return True, get_path(child_node), child_node.cost, child_node.depth, nodes_expanded
+               if(result):
+                   return result, path, cost, depth, nodes_expanded
         
         return False, [], 0, 0, nodes_expanded
 
