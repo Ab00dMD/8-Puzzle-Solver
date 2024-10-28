@@ -51,10 +51,4 @@ class IDS(Algorithm):
         return False, [], 0, 0, nodes_expanded
 
 
-
-if __name__ == "__main__":
-    path,node_expanded,search_depth = DFS.start_dfs("123456078")
-    print(path)
-    print(node_expanded)
-    print(search_depth)
         
