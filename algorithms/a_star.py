@@ -8,7 +8,7 @@ from utils import get_children, is_goal, get_path
 class AStar(Algorithm):
   def __init__(self, state, heuristic):
     super().__init__(state)
-    self.node = Node((state, "none"), -1, [], None)
+    self.node = Node(state, -1, [], None)
     self.heuristic = heuristic
     self.pq = PriorityQueue()
 
@@ -21,9 +21,11 @@ class AStar(Algorithm):
       cur_node = self.pq.get()[1]
       self.nodes_expanded += 1
 
-      if is_goal(cur_node.state[0]):
+      if is_goal(cur_node.state):
         running_time = time.time() - start_node
-        path = get_path(cur_node)
+        # merge two lists in one list of tuples
+        path, directions = get_path(cur_node)
+        path = ([(path[i], directions[i])for i in range(len(path))], directions)
         return {
           "path": path,
           "nodes_expanded": self.nodes_expanded,
@@ -32,8 +34,8 @@ class AStar(Algorithm):
           "running_time": running_time
         }
       
-      for child_state in get_children(cur_node.state[0]):
-        child_node = Node(child_state, cur_node, [], child_state[1], cur_node.cost + 1, cur_node.depth + 1)
+      for child_state, direction in get_children(cur_node.state):
+        child_node = Node(child_state, cur_node, [], direction, cur_node.cost + 1, cur_node.depth + 1)
         if child_state not in visited:
           visited.add(child_state)
           self.pq.put((self.__evaluation(child_node), child_node))
