@@ -17,7 +17,7 @@ def main():
         print(child)
 
 if __name__ == "__main__":
-    path,node_expanded,search_depth = IDS.start_ids("641302758")
+    path,node_expanded,search_depth = IDS.start_ids("806547231")
     print(path)
     print(node_expanded)
     print(search_depth)
