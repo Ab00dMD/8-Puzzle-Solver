@@ -1,0 +1,18 @@
+.row {
+  display: flex;
+}
+
+.cell {
+  border-radius: 8px;
+  background-color: #f63366;
+  margin: 15px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 70px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}

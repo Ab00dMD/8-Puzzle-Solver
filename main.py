@@ -5,19 +5,13 @@ from algorithms.bfs import BFS
 from algorithms.a_star import AStar
 import streamlit as st
 
+board_state="012345678"
 
 def build():
+    local_css("style.css")
     st.title("8 Puzzle Solver")
-    st.write("This is a simple 8 puzzle solver using different algorithms")
     algorithm = render_sidebar()
-    st.write("Algorithm: ", algorithm)
-    board = st.text_area("Enter the board", "1 2 3\n4 5 6\n7 8 0")
-    board = [[int(x) for x in row.split()] for row in board.split('\n')]
-    print_board(board)
-    if algorithm == "DFS":
-        print("DFS")
-    else:
-        print("IDS")
+    board = st.markdown(render_state(board_state), unsafe_allow_html=True)
 
 
 def render_sidebar():
@@ -27,8 +21,58 @@ def render_sidebar():
         "Algorithm",
         ["DFS", "IDS", "BFS", "A*-manhattan", "A*-euclidean"]
     )
+    st.sidebar.text_input("Board State")
+
+    if st.sidebar.button("Render State"):
+      pass
+
+    if st.sidebar.button("Solve"):
+      pass
+
     return algorithm
 
+def render_state(state: str):
+    return f"""
+    <div class="table">
+      <div class="row">
+        <div class="cell">
+          {state[0]}
+        </div>
+        <div class="cell">
+          {state[1]}
+        </div>
+        <div class="cell">
+          {state[2]}
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          {state[3]}
+        </div>
+        <div class="cell">
+          {state[4]}
+        </div>
+        <div class="cell">
+          {state[5]}
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          {state[6]}
+        </div>
+        <div class="cell">
+          {state[7]}
+        </div>
+        <div class="cell">
+          {state[8]}
+        </div>
+      </div>
+    </div>
+    """
+
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
 
 
