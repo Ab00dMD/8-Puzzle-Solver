@@ -17,8 +17,8 @@ def main():
         print(child)
 
 if __name__ == "__main__":
-    #ids = IDS("806547231")
-    #print(ids.search())
+    ids = IDS("641302758")
+    print(ids.search())
 
     #dfs = DFS("806547231")
     #print(dfs.search())
