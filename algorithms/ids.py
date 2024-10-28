@@ -33,7 +33,7 @@ class IDS(Algorithm):
                 }                
             limit += 1
         
-        return [],-1,-1
+        return None
     
 
     def dsl(self,cur_node,limit,nodes_expanded):
@@ -48,7 +48,7 @@ class IDS(Algorithm):
                if(result):
                    return result, path, cost, depth, nodes_expanded
         
-        return None
+        return False, [], 0, 0, nodes_expanded
 
 
 
