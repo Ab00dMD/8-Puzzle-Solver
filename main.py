@@ -25,7 +25,7 @@ def render_sidebar():
     st.sidebar.subheader("Choose an algorithm")
     algorithm = st.sidebar.selectbox(
         "Algorithm",
-        ["DFS", "IDS", "BFS", "A*"]
+        ["DFS", "IDS", "BFS", "A*-manhattan", "A*-euclidean"]
     )
     return algorithm
 
