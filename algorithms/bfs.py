@@ -45,4 +45,4 @@ class BFS (Algorithm):
                     visited.add(child_state[0])
                     frontier.push_back(child_node)
 
-        return [], -1, -1
+        return None

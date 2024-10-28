@@ -48,7 +48,7 @@ class IDS(Algorithm):
                if(result):
                    return result, path, cost, depth, nodes_expanded
         
-        return False, [], 0, 0, nodes_expanded
+        return None
 
 
 

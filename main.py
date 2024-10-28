@@ -96,16 +96,6 @@ def solve_board(board_state, algorithm):
         answer = {}
     return answer
   
-# answer is on the form of a dictionary with the following
-# return {
-#   "path": path,
-#   "cost": cur_node.cost,
-#   "nodes_expanded": self.nodes_expanded,
-#   "max_search_depth": cur_node.depth,
-#   "running_time": running_time
-# }
-# {'path': ([('102345678', 'left'), ('012345678', 'left')], ['left', 'left']), 'cost': 2, 'nodes_expanded': 4, 'max_search_depth': 2, 'running_time': 0.0032813549041748047}
-
 def display_answer(answer):
     if not answer:
         st.write("No solution found")
